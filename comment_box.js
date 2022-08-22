@@ -1,14 +1,21 @@
 
 //retrieving user input from the comment box and defining it as a variable
-  
 let input = document.getElementById("comment").value;
 
-//returning input on website
+//function that: returns input on website
+function printComment() {
+  return input;
+}
 
-//checking if input exceeds 14 chars, and if so, enacting special CSS styling of box
-  // if (input > 140) {
-       //enact CSS styling of box
-   //}
+//function that displays number of chars as the user types (e.g. 87/140)
+function iterate() {
+  for (let i=0; i < 140, i++;) {
+   return i + "/140";
+  }
 
-//displaying number of chars as the user types (e.g. 87/140)
-//- function that iterates through the characters while the user types, and displays iterations?
+  //function that checks if input exceeds 140 chars, and if so, enacts special CSS styling of box
+function charExceed() {
+ if (i > 140) {
+   //enact CSS styling of box
+  }
+}
