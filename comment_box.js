@@ -15,7 +15,7 @@ function iterate() {
 
   //function that checks if input exceeds 140 chars, and if so, enacts special CSS styling of box
 function charExceed() {
- if (i > 140) {
+ if  >//(html maxlength is reached) {
    //enact CSS styling of box
   }
 }
