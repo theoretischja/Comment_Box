@@ -7,16 +7,21 @@
 //create a variable for the userinput - this currently gets the fixed value in index.html
 let userInput = document.getElementById("comment").value;
 
-console.log(userInput);
+//create function that shows user input on page - working
+function displayComment() {
+  document.getElementById('showComment').innerHTML = userInput;
+}
+
+displayComment();
 
 //create function that checks whether the comment exceeds 140 chars - this works only when value="" in index.html
-function charCount () {
+const charCount = (userInput) => {
   if (userInput > 1) {
     console.log('You have exceeded the character count limit of 140 characters.');
   }
 }
 
-charCount();
+//charCount();
 
 //function that displays number of chars as the user types (e.g. 87/140)
 //function iterate() {
