@@ -11,7 +11,7 @@
 <body>
 <!--Form-->
 
-<form> 
+<form onsubmit="displayComment()"> 
     <label for="name">Your name:</label>
     <input type="text" id="name" name="name"><br>
     <br>
@@ -19,8 +19,7 @@
     <input type="email" id="email" name="email"><br>
     <br>
     <label for="comment">What are you proud of today?</label>
-    <input type="text" id="comment" name="comment" value="text"><br>
-    <p>Your comment:</p>
+    <input type="text" id="comment"><br>
     <p id="showComment" name="showComment"></p><br>
     <br>
     <input type="submit" id="submit"><br>
