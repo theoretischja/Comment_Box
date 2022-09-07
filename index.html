@@ -11,7 +11,7 @@
 <body>
 <!--Form-->
 
-<form onsubmit="displayComment()"> 
+<form onsubmit="displayComment(); return false;"> 
     <label for="name">Your name:</label>
     <input type="text" id="name" name="name"><br>
     <br>
@@ -19,7 +19,9 @@
     <input type="email" id="email" name="email"><br>
     <br>
     <label for="comment">What are you proud of today?</label>
-    <input type="text" id="comment"><br>
+    <input type="text" id="comment" oninput="charCount(); charExceed()"><br>
+    <p id="charCount" name="charCount"></p>
+    <p id="charExceed" name="charExceed"></p>
     <p id="showComment" name="showComment"></p><br>
     <br>
     <input type="submit" id="submit"><br>
