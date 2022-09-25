@@ -5,24 +5,25 @@
     <meta charset="UTF-8">
     <title>Comment-Box</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!--<link rel="stylesheet" href="./style.cc">-->
+    <link rel="stylesheet" href="./style.css">
 </head>
 
 <body>
 <!--Form-->
 
-<form onsubmit="displayComment(); return false;"> 
+<form> 
     <label for="name">Your name:</label>
-    <input type="text" id="name" name="name"><br>
+    <input type="text" id="name"><br>
     <br>
     <label for="email">Your email address:</label>
-    <input type="email" id="email" name="email"><br>
+    <input type="email" id="email"><br>
     <br>
     <label for="comment">What are you proud of today?</label>
-    <input type="text" id="comment" oninput="charCount()"><br>
-    <p id="charCount" name="charCount"></p>
-    <p id="charExceed" name="charExceed"></p>
-    <p id="showComment" name="showComment"></p><br>
+    <input type="text" id="comment"><br>
+    <p id="charCount"></p>
+    <p id="charExceed"></p>
+    <p id="showUserName"></p>
+    <p id="showComment"></p><br>
     <br>
     <input type="submit" id="submit"><br>
 </form>
