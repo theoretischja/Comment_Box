@@ -6,7 +6,7 @@
 //Give user feedback with custom styling on the comment box, when the user exceeds the character limit (e.g. with a coloured border)
 // - works
 //Show the comment on the page when submitted alongside the author’s name
-// - works but need to prevent default so form doesn't reset
+// - works
 //Allow the user to submit additional comments, while previous comments remain visible
 
 
@@ -20,9 +20,9 @@ let userName = document.getElementById("name");
 let showUserName = document.getElementById("showUserName");
 
 function charCounting() {
-  if (char > 138) {
+  if (char > 8) {
     charExceed.innerHTML = 'You have exceeded the word count.'
-    comment.style.border = '10px solid blue';
+    comment.style.border = '5px dotted red';
   } else {
     console.log('Goodbye!');
   }
@@ -33,7 +33,8 @@ function showCharCount() {
   charCount.innerHTML = 'Character count: ' + char + '/140';
 };
 
-function submitComment() {
+function submitComment(e) {
+  e.preventDefault();
   showUserName.innerHTML = userName.value;
   showComment.innerHTML = comment.value;
 };
