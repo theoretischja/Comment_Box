@@ -1,6 +1,6 @@
 
 //Check whether the comment exceeds a character count of 140 characters using Javascript
-// - works, but deletions are also counted as characters
+// - works
 //Display the number of characters as the user types (e.g. 87/140)
 // - works
 //Give user feedback with custom styling on the comment box, when the user exceeds the character limit (e.g. with a coloured border)
@@ -8,9 +8,10 @@
 //Show the comment on the page when submitted alongside the author’s name
 // - works
 //Allow the user to submit additional comments, while previous comments remain visible
+//- not working yet (need to get input fields to clear after first input, and find way to print additional comments)
 
 
-let char = document.getElementById("comment").value.length;
+let char = document.getElementById("comment");
 let comment = document.getElementById("comment");
 let showComment = document.getElementById("showComment");
 let charCount = document.getElementById("charCount");
@@ -20,29 +21,24 @@ let userName = document.getElementById("name");
 let showUserName = document.getElementById("showUserName");
 
 function charCounting() {
-  if (char > 8) {
+  if (char.value.length > 140) {
     charExceed.innerHTML = 'You have exceeded the word count.'
     comment.style.border = '5px dotted red';
   } else {
-    console.log('Goodbye!');
+    charExceed.innerHTML = 'Keep typing...';
+    comment.style.border = '2px solid black';
   }
-  char++;
 };
 
 function showCharCount() {
-  charCount.innerHTML = 'Character count: ' + char + '/140';
+  charCount.innerHTML = 'Character count: ' + char.value.length + '/140';
 };
 
 function submitComment(e) {
+  showUserName.innerHTML = 'Your name: ' + userName.value;
+  showComment.innerHTML = 'Your comment: ' + comment.value;
   e.preventDefault();
-  showUserName.innerHTML = userName.value;
-  showComment.innerHTML = comment.value;
 };
-
-//not in use at the moment
-//function decrementCharCount() {
-  //showComment.innerHTML = char--;
-//}
 
 comment.addEventListener('input', charCounting);
 comment.addEventListener('input', showCharCount);
