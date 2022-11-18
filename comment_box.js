@@ -1,31 +1,19 @@
 
-//Check whether the comment exceeds a character count of 140 characters using Javascript
-// - works
-//Display the number of characters as the user types (e.g. 87/140)
-// - works
-//Give user feedback with custom styling on the comment box, when the user exceeds the character limit (e.g. with a coloured border)
-// - works
-//Show the comment on the page when submitted alongside the author’s name
-// - works
-//Allow the user to submit additional comments, while previous comments remain visible
-//- not working yet (find way to print additional comments)
-
-
 let char = document.getElementById("comment");
 let comment = document.getElementById("comment");
-let showComment = document.getElementById("showComment");
+let userName = document.getElementById("name");
+let email = document.getElementById("email");
 let charCount = document.getElementById("charCount");
 let charExceed = document.getElementById("charExceed");
 let submitButton = document.getElementById("submit");
-let userName = document.getElementById("name");
-let showUserName = document.getElementById("showUserName");
+
 
 function charCounting() {
-  if (char.value.length > 14) {
-    charExceed.innerHTML = 'You have exceeded the word count.'
+  if (char.value.length > 140) {
+    charExceed.innerHTML = 'You have exceeded the word count!'
     comment.style.border = '5px dotted red';
   } else {
-    charExceed.innerHTML = 'Keep typing...';
+    charExceed.innerHTML = 'You are within the word count...';
     comment.style.border = '2px solid black';
   }
 };
@@ -36,8 +24,15 @@ function showCharCount() {
 
 function submitComment(e) {
   e.preventDefault();
-  showUserName.innerHTML = 'Your name: ' + userName.value;
-  showComment.innerHTML = 'Your comment: ' + comment.value;
+  const childName = document.createElement("cn");
+  const childEmail = document.createElement("ce");
+  const childComment = document.createElement("cc");
+  childName.innerHTML = "Your name: " + userName.value + " ";
+  childEmail.innerHTML = "Your email: " + email.value + " ";
+  childComment.innerHTML = "Your comment: " + comment.value + " ";
+  document.getElementById("parent").appendChild(childName);
+  document.getElementById("parent").appendChild(childEmail);
+  document.getElementById("parent").appendChild(childComment);
   document.getElementById("form").reset();
 };
 
